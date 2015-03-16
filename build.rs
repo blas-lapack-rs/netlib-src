@@ -44,6 +44,7 @@ fn main() {
     }
 
     println!("cargo:rustc-flags=-l {}=blas", kind);
+    println!("cargo:rustc-flags=-l gfortran");
     if !env::var("CARGO_FEATURE_BLAS_ONLY").is_ok() {
         println!("cargo:rustc-flags=-l {}=lapack", kind);
         println!("cargo:rustc-flags=-l {}=lapacke", kind);
