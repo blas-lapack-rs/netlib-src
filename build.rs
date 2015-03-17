@@ -23,9 +23,9 @@ fn main() {
         let src = PathBuf::new(&env::var("CARGO_MANIFEST_DIR").unwrap()).join("lapack");
         let dst = PathBuf::new(&env::var("OUT_DIR").unwrap());
 
-
-        // how annoying! it seems to assume case-insensitive, and look in *both* places...
-        run(Command::new("cp").arg("-r").arg(&src.join("CBLAS/cmake")).arg(&src.join("CBLAS/CMAKE")), "cp");
+        if !target.contains("apple") {
+            run(Command::new("ln").arg("-s").arg(&src.join("CBLAS/cmake")).arg(&src.join("CBLAS/CMAKE")), "ln");
+        }
 
         run(Command::new("cmake").current_dir(&dst)
              .arg(&src)
