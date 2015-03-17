@@ -24,7 +24,8 @@ fn main() {
         let dst = PathBuf::new(&env::var("OUT_DIR").unwrap());
 
         if !target.contains("apple") {
-            run(Command::new("ln").arg("-s").arg(&src.join("CBLAS/cmake")).arg(&src.join("CBLAS/CMAKE")), "ln");
+            // same reason as below
+            let _ = Command::new("ln").arg("-s").arg(&src.join("CBLAS/cmake")).arg(&src.join("CBLAS/CMAKE")).status();
         }
 
         // we ignore this result. why? because you can't run `cmake` more than twice with this
@@ -48,7 +49,10 @@ fn main() {
     if !env::var("CARGO_FEATURE_BLAS_ONLY").is_ok() {
         println!("cargo:rustc-flags=-l {}=lapack", kind);
         println!("cargo:rustc-flags=-l {}=lapacke", kind);
+        println!("cargo:rustc-flags=-l {}=blas", kind);
+        println!("cargo:rustc-flags=-l {}=cblas", kind);
     } else {
+        println!("cargo:rustc-flags=-l {}=blas", kind);
         println!("cargo:rustc-flags=-l {}=cblas", kind);
     }
 }
