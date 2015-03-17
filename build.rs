@@ -27,27 +27,29 @@ fn main() {
             run(Command::new("ln").arg("-s").arg(&src.join("CBLAS/cmake")).arg(&src.join("CBLAS/CMAKE")), "ln");
         }
 
-        run(Command::new("cmake").current_dir(&dst)
+        // we ignore this result. why? because you can't run `cmake` more than twice with this
+        // setup :(
+        let _ = Command::new("cmake").current_dir(&dst)
              .arg(&src)
              .arg("-DCMAKE_Fortran_FLAGS='-O2 -frecursive -fPIC'")
              .arg("-DCBLAS=on")
-             .arg("-DLAPACKE=on"), "cmake");
+             .arg("-DLAPACKE=on")
+             .arg(&format!("-DCMAKE_C_FLAGS={}", cflags)).status();
 
         run(Command::new("cmake").current_dir(&dst)
              .arg("--build").arg(".")
-             .arg("--target").arg("cblas")
-             .arg("--target").arg("lapacke")
              .arg("--")
              .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap_or(String::from_str("1")))), "cmake");
 
         println!("cargo:rustc-flags=-L {}", dst.join("lib").display());
     }
 
-    println!("cargo:rustc-flags=-l {}=blas", kind);
     println!("cargo:rustc-flags=-l gfortran");
     if !env::var("CARGO_FEATURE_BLAS_ONLY").is_ok() {
         println!("cargo:rustc-flags=-l {}=lapack", kind);
         println!("cargo:rustc-flags=-l {}=lapacke", kind);
+    } else {
+        println!("cargo:rustc-flags=-l {}=cblas", kind);
     }
 }
 
