@@ -5,12 +5,12 @@ version = "0.0.1"
 authors = ["Corey Richardson <corey@octayn.net>"]
 links = "blas"
 build = "build.rs"
-repository = "https://github.com/cmr/openblas-blas-provider"
+repository = "https://github.com/cmr/netlib-blas-provider"
 license = "BSL-1.0"
-description = "BLAS provider using the excellent OpenBLAS implementation"
+description = "BLAS/LAPACK provider using the Netlib implementation"
 
 [lib]
-name = "openblas-blas-provider"
+name = "netlib-blas-provider"
 path = "lib.rs"
 
 [dependencies]
