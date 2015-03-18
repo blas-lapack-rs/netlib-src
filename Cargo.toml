@@ -13,5 +13,9 @@ description = "BLAS/LAPACK provider using the Netlib implementation"
 name = "netlib-blas-provider"
 path = "lib.rs"
 
+[features]
+system-netlib = []
+blas-only = []
+
 [dependencies]
 libc = "*"
