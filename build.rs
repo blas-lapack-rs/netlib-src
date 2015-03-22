@@ -40,7 +40,7 @@ fn main() {
         run(Command::new("cmake").current_dir(&dst)
              .arg("--build").arg(".")
              .arg("--")
-             .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap_or(String::from_str("1")))), "cmake");
+             .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap_or("1".to_string()))), "cmake");
 
         println!("cargo:rustc-flags=-L {}", dst.join("lib").display());
     }
@@ -61,7 +61,7 @@ fn run(cmd: &mut Command, program: &str) {
     println!("running: {:?}", cmd);
     let status = match cmd.status() {
         Ok(status) => status,
-        Err(ref e) if e.kind() == ErrorKind::FileNotFound => {
+        Err(ref e) if e.kind() == ErrorKind::NotFound => {
             fail(&format!("failed to execute command: {}\nis `{}` not installed?",
                           e, program));
         }
