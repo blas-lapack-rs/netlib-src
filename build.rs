@@ -1,7 +1,7 @@
-use std::path::*;
-use std::process::*;
 use std::env;
 use std::io::*;
+use std::path::*;
+use std::process::*;
 
 fn main() {
     let kind = "static";
@@ -25,22 +25,27 @@ fn main() {
 
         if !target.contains("apple") {
             // same reason as below
-            let _ = Command::new("ln").arg("-s").arg(&src.join("CBLAS/cmake")).arg(&src.join("CBLAS/CMAKE")).status();
+            let _ = Command::new("ln")
+                            .arg("-s")
+                            .arg(&src.join("CBLAS/cmake"))
+                            .arg(&src.join("CBLAS/CMAKE")).status();
         }
 
         // we ignore this result. why? because you can't run `cmake` more than twice with this
         // setup :(
-        let _ = Command::new("cmake").current_dir(&dst)
-             .arg(&src)
-             .arg("-DCMAKE_Fortran_FLAGS='-O2 -frecursive -fPIC'")
-             .arg("-DCBLAS=on")
-             .arg("-DLAPACKE=on")
-             .arg(&format!("-DCMAKE_C_FLAGS={}", cflags)).status();
+        let _ = Command::new("cmake")
+                        .arg(&src)
+                        .arg("-DCMAKE_Fortran_FLAGS='-O2 -frecursive -fPIC'")
+                        .arg("-DCBLAS=on")
+                        .arg("-DLAPACKE=on")
+                        .arg(&format!("-DCMAKE_C_FLAGS={}", cflags))
+                        .current_dir(&dst).status();
 
-        run(Command::new("cmake").current_dir(&dst)
-             .arg("--build").arg(".")
-             .arg("--")
-             .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap_or("1".to_string()))), "cmake");
+        run(Command::new("cmake")
+                    .arg("--build").arg(".")
+                    .arg("--")
+                    .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap()))
+                    .current_dir(&dst), "cmake");
 
         println!("cargo:rustc-flags=-L {}", dst.join("lib").display());
     }
