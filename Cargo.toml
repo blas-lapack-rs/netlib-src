@@ -9,7 +9,7 @@ license = "BSL-1.0"
 description = "BLAS/LAPACK provider using the Netlib implementation"
 
 [lib]
-name = "netlib-blas-provider"
+name = "netlib_blas_provider"
 path = "lib.rs"
 
 [features]

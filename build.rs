@@ -1,3 +1,5 @@
+#![feature(convert)]
+
 use std::env;
 use std::io::*;
 use std::path::*;
@@ -20,8 +22,8 @@ fn main() {
             cflags.push_str(" -fPIC");
         }
 
-        let src = PathBuf::new(&env::var("CARGO_MANIFEST_DIR").unwrap()).join("lapack");
-        let dst = PathBuf::new(&env::var("OUT_DIR").unwrap());
+        let src = PathBuf::from(&env::var("CARGO_MANIFEST_DIR").unwrap()).join("lapack");
+        let dst = PathBuf::from(&env::var("OUT_DIR").unwrap());
 
         if !target.contains("apple") {
             // same reason as below
