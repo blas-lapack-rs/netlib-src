@@ -49,18 +49,18 @@ fn main() {
                     .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap()))
                     .current_dir(&dst), "cmake");
 
-        println!("cargo:rustc-flags=-L {}", dst.join("lib").display());
+        println!("cargo:rustc-link-search=native={}", dst.join("lib").display());
     }
 
-    println!("cargo:rustc-flags=-l gfortran");
+    println!("cargo:rustc-link-lib=dylib=gfortran");
     if !env::var("CARGO_FEATURE_BLAS_ONLY").is_ok() {
-        println!("cargo:rustc-flags=-l {}=lapack", kind);
-        println!("cargo:rustc-flags=-l {}=lapacke", kind);
-        println!("cargo:rustc-flags=-l {}=blas", kind);
-        println!("cargo:rustc-flags=-l {}=cblas", kind);
+        println!("cargo:rustc-link-lib={}=lapack", kind);
+        println!("cargo:rustc-link-lib={}=lapacke", kind);
+        println!("cargo:rustc-link-lib={}=blas", kind);
+        println!("cargo:rustc-link-lib={}=cblas", kind);
     } else {
-        println!("cargo:rustc-flags=-l {}=blas", kind);
-        println!("cargo:rustc-flags=-l {}=cblas", kind);
+        println!("cargo:rustc-link-lib={}=blas", kind);
+        println!("cargo:rustc-link-lib={}=cblas", kind);
     }
 }
 
