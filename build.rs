@@ -1,5 +1,3 @@
-#![feature(convert)]
-
 use std::env;
 use std::io::*;
 use std::path::*;
@@ -49,7 +47,7 @@ fn main() {
                     .arg(&format!("-j{}", env::var("NUM_JOBS").unwrap()))
                     .current_dir(&dst), "cmake");
 
-        println!("cargo:rustc-link-search=native={}", dst.join("lib").display());
+        println!("cargo:rustc-link-search={}", dst.join("lib").display());
     }
 
     println!("cargo:rustc-link-lib=dylib=gfortran");

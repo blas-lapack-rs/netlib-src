@@ -1,6 +1,6 @@
 [package]
 name = "netlib-blas-provider"
-version = "0.0.7"
+version = "0.0.8"
 authors = ["Corey Richardson <corey@octayn.net>"]
 links = "blas"
 build = "build.rs"
