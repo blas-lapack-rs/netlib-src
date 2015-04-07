@@ -1,15 +1,24 @@
-# netlib-provider
+# Netlib Provider
 
-A crate for statically linking to netlib BLAS. By default, this crate will
-build and use a bundled BLAS. Building this will require a Fortran and C
-compiler available.  This provides BLAS and LAPACK.
+The package provides [BLAS][1] and [LAPACK][2] using the [Netlib][3]
+implementation. By default, the package will build and use a bundled Netlib,
+which requires a Fortran and C compiler available.
 
-Two Cargo features are supported:
+The following two Cargo features are supported:
 
-- `system-netlib`: don't use the bundled BLAS/LAPACK.
-- `blas-only`: don't link to LAPACK
+- `system-netlib` to skip building the bundled Netlib and
+- `blas-only` to skip building only LAPACK.
 
-# Where are all the FFI definitions?
+## Where are all the FFI definitions?
 
-This crate only provides a BLAS implementation. Bindings are available at https://github.com/stainless-steel/libblas-sys,
-and a wrapper is available at https://github.com/stainless-steel/blas.
+This package only provides an implementation of BLAS and LAPACK. Bindings are
+available in [libblas-sys][4] and [liblapack-sys][5], and wrappers are available
+in [blas][6] and [lapack][7].
+
+[1]: https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms
+[2]: https://en.wikipedia.org/wiki/LAPACK
+[3]: http://www.netlib.org/lapack
+[4]: https://github.com/stainless-steel/libblas-sys
+[5]: https://github.com/stainless-steel/liblapack-sys
+[6]: https://github.com/stainless-steel/blas
+[7]: https://github.com/stainless-steel/lapack
