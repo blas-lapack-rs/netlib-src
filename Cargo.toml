@@ -4,7 +4,7 @@ version = "0.0.8"
 authors = ["Corey Richardson <corey@octayn.net>", "Ivan Ukhov <ivan.ukhov@gmail.com>"]
 links = "blas"
 build = "build.rs"
-repository = "https://github.com/cmr/netlib-blas-provider"
+repository = "https://github.com/cmr/netlib-provider"
 license = "BSL-1.0"
 description = "BLAS/LAPACK provider using the Netlib implementation"
 
