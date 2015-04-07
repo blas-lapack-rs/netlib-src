@@ -1,4 +1,4 @@
-# netlib-blas-provider
+# netlib-provider
 
 A crate for statically linking to netlib BLAS. By default, this crate will
 build and use a bundled BLAS. Building this will require a Fortran and C
@@ -11,4 +11,5 @@ Two Cargo features are supported:
 
 # Where are all the FFI definitions?
 
-TODO: https://github.com/stainless-steel/libblas-sys
+This crate only provides a BLAS implementation. Bindings are available at https://github.com/stainless-steel/libblas-sys,
+and a wrapper is available at https://github.com/stainless-steel/blas.
