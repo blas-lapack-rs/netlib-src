@@ -16,6 +16,7 @@ fn main() {
         run(Command::new("cmake")
                     .arg(&src)
                     .arg("-DCMAKE_Fortran_FLAGS='-O2 -frecursive -fPIC'")
+                    .arg("-DBUILD_TESTING=off")
                     .arg(&format!("-DCBLAS={}", if cblas { "on" } else { "off" }))
                     .arg(&format!("-DLAPACKE={}", if lapack { "on" } else { "off" }))
                     .current_dir(&dst), "cmake");
