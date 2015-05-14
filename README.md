@@ -2,12 +2,13 @@
 
 The package provides [BLAS][1] and [LAPACK][2] using the [Netlib][3]
 implementation. By default, the package will build and use a bundled Netlib,
-which requires a Fortran compiler.
+which requires a Fortran and C compiler.
 
-The following two Cargo features are supported:
+The following Cargo features are supported:
 
-- `system-netlib` to skip building the bundled Netlib and
-- `blas-only` to skip building only LAPACK.
+* `system-netlib` to skip building the bundled Netlib,
+* `exclude-cblas` to skip building CBLAS, and
+* `exclude-lapack` to skip building LAPACK.
 
 ## Where are all the FFI definitions?
 
