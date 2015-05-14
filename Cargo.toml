@@ -14,7 +14,8 @@ path = "lib.rs"
 
 [features]
 system-netlib = []
-blas-only = []
+exclude-cblas = []
+exclude-lapack = []
 
 [dependencies]
 libc = "*"
