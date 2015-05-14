@@ -5,10 +5,11 @@ use std::process::*;
 fn main() {
     let kind = "static";
 
-    let cblas = !env::var("CARGO_FEATURE_EXCLUDE_CBLAS").is_ok();
     let lapack = !env::var("CARGO_FEATURE_EXCLUDE_LAPACK").is_ok();
 
     if !env::var("CARGO_FEATURE_SYSTEM_NETLIB").is_ok() {
+        let cblas = !env::var("CARGO_FEATURE_EXCLUDE_CBLAS").is_ok();
+
         let src = PathBuf::from(&env::var("CARGO_MANIFEST_DIR").unwrap()).join("lapack");
         let dst = PathBuf::from(&env::var("OUT_DIR").unwrap());
 
