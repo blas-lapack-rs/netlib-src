@@ -16,4 +16,4 @@ path = "lib.rs"
 [features]
 system-netlib = []
 exclude-cblas = []
-exclude-lapack = []
+exclude-lapacke = []

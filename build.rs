@@ -5,7 +5,7 @@ use std::process::*;
 fn main() {
     let kind = "static";
 
-    let lapack = !env::var("CARGO_FEATURE_EXCLUDE_LAPACK").is_ok();
+    let lapacke = !env::var("CARGO_FEATURE_EXCLUDE_LAPACKE").is_ok();
 
     if !env::var("CARGO_FEATURE_SYSTEM_NETLIB").is_ok() {
         let cblas = !env::var("CARGO_FEATURE_EXCLUDE_CBLAS").is_ok();
@@ -18,7 +18,7 @@ fn main() {
                     .arg("-DCMAKE_Fortran_FLAGS='-O2 -frecursive -fPIC'")
                     .arg("-DBUILD_TESTING=off")
                     .arg(&format!("-DCBLAS={}", if cblas { "on" } else { "off" }))
-                    .arg(&format!("-DLAPACKE={}", if lapack { "on" } else { "off" }))
+                    .arg(&format!("-DLAPACKE={}", if lapacke { "on" } else { "off" }))
                     .current_dir(&dst), "cmake");
 
         run(Command::new("cmake")
@@ -32,8 +32,8 @@ fn main() {
 
     println!("cargo:rustc-link-lib=dylib=gfortran");
     println!("cargo:rustc-link-lib={}=blas", kind);
-    if lapack {
-        println!("cargo:rustc-link-lib={}=lapack", kind);
+    println!("cargo:rustc-link-lib={}=lapack", kind);
+    if lapacke {
         println!("cargo:rustc-link-lib={}=lapacke", kind);
     }
 }

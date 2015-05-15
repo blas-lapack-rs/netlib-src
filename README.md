@@ -8,7 +8,7 @@ The following Cargo features are supported:
 
 * `system-netlib` to skip building the bundled Netlib,
 * `exclude-cblas` to skip building CBLAS, and
-* `exclude-lapack` to skip building LAPACK.
+* `exclude-lapacke` to skip building LAPACKE.
 
 ## Where are all the FFI definitions?
 
