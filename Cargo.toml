@@ -2,11 +2,12 @@
 name = "netlib-provider"
 version = "0.1.1"
 authors = ["Corey Richardson <corey@octayn.net>", "Ivan Ukhov <ivan.ukhov@gmail.com>"]
+license = "BSL-1.0"
+repository = "https://github.com/cmr/netlib-provider"
+homepage = "https://github.com/cmr/netlib-provider"
+description = "BLAS/LAPACK provider using the Netlib implementation"
 links = "blas"
 build = "build.rs"
-repository = "https://github.com/cmr/netlib-provider"
-license = "BSL-1.0"
-description = "BLAS/LAPACK provider using the Netlib implementation"
 exclude = ["lapack/TESTING/*", "lapack/BLAS/TESTING/*", "lapack/CBLAS/testing/*"]
 
 [lib]
