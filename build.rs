@@ -45,10 +45,10 @@ fn use_bundled() {
 
     run(Command::new("cmake")
                 .arg(&source)
-                .arg("-DBUILD_TESTING=off")
-                .arg(&format!("-DBUILD_SHARED_LIBS={}", if kind == "dylib" { "on" } else { "off" }))
-                .arg(&format!("-DCBLAS={}", if cblas { "on" } else { "off" }))
-                .arg(&format!("-DLAPACKE={}", if lapacke { "on" } else { "off" }))
+                .arg("-DBUILD_TESTING=OFF")
+                .arg(&format!("-DBUILD_SHARED_LIBS={}", if kind == "dylib" { "ON" } else { "OFF" }))
+                .arg(&format!("-DCBLAS={}", if cblas { "ON" } else { "OFF" }))
+                .arg(&format!("-DLAPACKE={}", if lapacke { "ON" } else { "OFF" }))
                 .current_dir(&output));
 
     run(Command::new("make")
