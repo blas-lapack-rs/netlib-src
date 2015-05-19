@@ -6,6 +6,7 @@ which requires a Fortran and C compiler.
 
 The following Cargo features are supported:
 
+* `static-netlib` to link to Netlib statically,
 * `system-netlib` to skip building the bundled Netlib,
 * `exclude-cblas` to skip building CBLAS, and
 * `exclude-lapacke` to skip building LAPACKE.

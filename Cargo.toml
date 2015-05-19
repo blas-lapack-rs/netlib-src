@@ -15,6 +15,7 @@ name = "netlib_provider"
 path = "lib.rs"
 
 [features]
+static-netlib = []
 system-netlib = []
 exclude-cblas = []
 exclude-lapacke = []
