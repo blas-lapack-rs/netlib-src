@@ -8,7 +8,7 @@ homepage = "https://github.com/cmr/netlib-provider"
 description = "BLAS/LAPACK provider using the Netlib implementation"
 links = "blas"
 build = "build.rs"
-exclude = ["lapack/TESTING/*", "lapack/BLAS/TESTING/*", "lapack/CBLAS/testing/*"]
+exclude = ["source/TESTING/*", "source/BLAS/TESTING/*", "source/CBLAS/testing/*"]
 
 [lib]
 name = "netlib_provider"
