@@ -33,7 +33,7 @@ fn use_bundled() {
     let cblas = var("CARGO_FEATURE_EXCLUDE_CBLAS").is_err();
     let lapacke = var("CARGO_FEATURE_EXCLUDE_LAPACKE").is_err();
 
-    let source = PathBuf::from(&var("CARGO_MANIFEST_DIR").unwrap()).join("lapack");
+    let source = PathBuf::from(&var("CARGO_MANIFEST_DIR").unwrap()).join("source");
     let output = PathBuf::from(&var("OUT_DIR").unwrap());
 
     if fs::metadata(&source.join("CBLAS/CMAKE")).is_err() {
