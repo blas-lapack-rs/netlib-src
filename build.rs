@@ -20,10 +20,11 @@ fn use_system() {
     let lapacke = var("CARGO_FEATURE_EXCLUDE_LAPACKE").is_err();
 
     println!("cargo:rustc-link-lib={}=blas", kind);
+    println!("cargo:rustc-link-lib={}=lapack", kind);
+    println!("cargo:rustc-link-lib=dylib=gfortran");
     if cblas {
         println!("cargo:rustc-link-lib={}=cblas", kind);
     }
-    println!("cargo:rustc-link-lib={}=lapack", kind);
     if lapacke {
         println!("cargo:rustc-link-lib={}=lapacke", kind);
     }
@@ -52,12 +53,12 @@ fn use_bundled() {
 
     println!("cargo:rustc-link-search={}", output.join("lib").display());
     println!("cargo:rustc-link-lib={}=blas", kind);
+    println!("cargo:rustc-link-lib={}=lapack", kind);
+    println!("cargo:rustc-link-lib=dylib=gfortran");
     if cblas {
         println!("cargo:rustc-link-lib={}=cblas", kind);
     }
-    println!("cargo:rustc-link-lib={}=lapack", kind);
     if lapacke {
         println!("cargo:rustc-link-lib={}=lapacke", kind);
     }
-    println!("cargo:rustc-link-lib=dylib=gfortran");
 }
