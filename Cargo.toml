@@ -1,14 +1,22 @@
 [package]
 name = "netlib-provider"
 version = "0.1.4"
-authors = ["Corey Richardson <corey@octayn.net>", "Ivan Ukhov <ivan.ukhov@gmail.com>"]
+authors = [
+  "Corey Richardson <corey@octayn.net>",
+  "Ivan Ukhov <ivan.ukhov@gmail.com>",
+]
 license = "BSL-1.0"
 repository = "https://github.com/cmr/netlib-provider"
 homepage = "https://github.com/cmr/netlib-provider"
-description = "BLAS/LAPACK provider using the Netlib implementation"
+description = """
+The package provides BLAS and LAPACK using the Netlib implementation."""
 links = "blas"
 build = "build.rs"
-exclude = ["source/TESTING/*", "source/BLAS/TESTING/*", "source/CBLAS/testing/*"]
+exclude = [
+  "source/TESTING/*",
+  "source/BLAS/TESTING/*",
+  "source/CBLAS/testing/*",
+]
 
 [lib]
 name = "netlib_provider"
