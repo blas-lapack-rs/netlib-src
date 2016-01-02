@@ -28,6 +28,7 @@ fn main() {
                             .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
                             .define("CBLAS", switch!(cblas))
                             .define("LAPACKE", switch!(lapacke))
+                            .define("CMAKE_INSTALL_LIBDIR", "lib")
                             .build();
 
         println!("cargo:rustc-link-search={}", output.join("lib").display());
