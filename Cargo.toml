@@ -17,10 +17,6 @@ exclude = [
   "source/CBLAS/testing/*",
 ]
 
-[lib]
-name = "netlib_provider"
-path = "lib.rs"
-
 [features]
 static-netlib = []
 system-netlib = []
