@@ -18,10 +18,12 @@ exclude = [
 ]
 
 [features]
+default = ["include-cblas", "include-lapacke"]
+
+include-cblas = []
+include-lapacke = []
 static-netlib = []
 system-netlib = []
-exclude-cblas = []
-exclude-lapacke = []
 
 [build-dependencies]
 cmake = "0.1"
