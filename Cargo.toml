@@ -18,10 +18,10 @@ exclude = [
 ]
 
 [features]
-default = ["include-cblas", "include-lapacke"]
+default = ["cblas", "lapacke"]
 
-include-cblas = []
-include-lapacke = []
+cblas = []
+lapacke = []
 static-netlib = []
 system-netlib = []
 

@@ -10,8 +10,8 @@ macro_rules! switch(($condition:expr) => (if $condition { "ON" } else { "OFF" })
 
 fn main() {
     let kind = if var("CARGO_FEATURE_STATIC_NETLIB").is_ok() { "static" } else { "dylib" };
-    let cblas = var("CARGO_FEATURE_INCLUDE_CBLAS").is_ok();
-    let lapacke = var("CARGO_FEATURE_INCLUDE_LAPACKE").is_ok();
+    let cblas = var("CARGO_FEATURE_CBLAS").is_ok();
+    let lapacke = var("CARGO_FEATURE_LAPACKE").is_ok();
 
     if !var("CARGO_FEATURE_SYSTEM_NETLIB").is_ok() {
         let source = PathBuf::from(&var("CARGO_MANIFEST_DIR").unwrap()).join("source");

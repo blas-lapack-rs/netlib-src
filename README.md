@@ -6,8 +6,8 @@ which requires a Fortran and C compiler.
 
 The following Cargo features are supported:
 
-* `include-cblas` to build CBLAS (enabled by default),
-* `include-lapacke` to build LAPACKE (enabled by default),
+* `cblas` to build CBLAS (enabled by default),
+* `lapacke` to build LAPACKE (enabled by default),
 * `static-netlib` to link to Netlib statically, and
 * `system-netlib` to skip building the bundled Netlib.
 
