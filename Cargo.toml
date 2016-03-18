@@ -22,8 +22,8 @@ default = ["cblas", "lapacke"]
 
 cblas = []
 lapacke = []
-static-netlib = []
-system-netlib = []
+static = []
+system = []
 
 [build-dependencies]
 cmake = "0.1"

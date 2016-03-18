@@ -8,8 +8,8 @@ The following Cargo features are supported:
 
 * `cblas` to build CBLAS (enabled by default),
 * `lapacke` to build LAPACKE (enabled by default),
-* `static-netlib` to link to Netlib statically, and
-* `system-netlib` to skip building the bundled Netlib.
+* `static` to link to Netlib statically, and
+* `system` to skip building the bundled Netlib.
 
 ## Where are all the FFI definitions?
 
