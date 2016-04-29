@@ -6,15 +6,21 @@ use std::fs::metadata;
 use std::path::PathBuf;
 use std::process::Command;
 
-macro_rules! switch(($condition:expr) => (if $condition { "ON" } else { "OFF" }));
+macro_rules! feature(
+    ($name:expr) => (var(concat!("CARGO_FEATURE_", $name)).is_ok());
+);
+
+macro_rules! switch(
+    ($condition:expr) => (if $condition { "ON" } else { "OFF" });
+);
 
 fn main() {
-    let kind = if var("CARGO_FEATURE_STATIC").is_ok() { "static" } else { "dylib" };
-    let cblas = var("CARGO_FEATURE_CBLAS").is_ok();
-    let lapacke = var("CARGO_FEATURE_LAPACKE").is_ok();
+    let kind = if feature!("STATIC") { "static" } else { "dylib" };
+    let cblas = feature!("CBLAS");
+    let lapacke = feature!("LAPACKE");
 
-    if !var("CARGO_FEATURE_SYSTEM").is_ok() {
-        let source = PathBuf::from(&var("CARGO_MANIFEST_DIR").unwrap()).join("source");
+    if !feature!("SYSTEM") {
+        let source = PathBuf::from("source");
 
         if metadata(&source.join("CBLAS/CMAKE")).is_err() {
             let _ = Command::new("ln")
