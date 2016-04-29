@@ -1,4 +1,4 @@
-# Netlib Provider [![Version][version-img]][version-url]
+# Netlib Provider [![Version][version-img]][version-url] [![Status][status-img]][status-url]
 
 The package provides [BLAS][1] and [LAPACK][2] using the [Netlib][3]
 implementation. By default, the package will build and use a bundled Netlib,
@@ -34,3 +34,5 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 
 [version-img]: https://img.shields.io/crates/v/netlib-provider.svg
 [version-url]: https://crates.io/crates/netlib-provider
+[status-img]: https://travis-ci.org/cmr/netlib-provider.svg?branch=master
+[status-url]: https://travis-ci.org/cmr/netlib-provider
