@@ -1,4 +1,4 @@
-# Netlib Provider [![Version][version-img]][version-url] [![Status][status-img]][status-url]
+# netlib-src [![Version][version-img]][version-url] [![Status][status-img]][status-url]
 
 The package provides [BLAS][1] and [LAPACK][2] using the [Netlib][3]
 implementation. By default, the package will build and use a bundled Netlib,
@@ -32,7 +32,7 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 [6]: https://github.com/stainless-steel/blas
 [7]: https://github.com/stainless-steel/lapack
 
-[version-img]: https://img.shields.io/crates/v/netlib-provider.svg
-[version-url]: https://crates.io/crates/netlib-provider
-[status-img]: https://travis-ci.org/cmr/netlib-provider.svg?branch=master
-[status-url]: https://travis-ci.org/cmr/netlib-provider
+[status-img]: https://travis-ci.org/cmr/netlib-src.svg?branch=master
+[status-url]: https://travis-ci.org/cmr/netlib-src
+[version-img]: https://img.shields.io/crates/v/netlib-src.svg
+[version-url]: https://crates.io/crates/netlib-src

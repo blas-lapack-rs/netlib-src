@@ -1,5 +1,5 @@
 [package]
-name = "netlib-provider"
+name = "netlib-src"
 version = "0.4.1"
 license = "Apache-2.0/MIT"
 authors = [
@@ -7,10 +7,10 @@ authors = [
   "Ivan Ukhov <ivan.ukhov@gmail.com>",
 ]
 description = "The package provides BLAS and LAPACK using the Netlib implementation."
-homepage = "https://github.com/cmr/netlib-provider"
-repository = "https://github.com/cmr/netlib-provider"
-links = "blas"
+homepage = "https://github.com/cmr/netlib-src"
+repository = "https://github.com/cmr/netlib-src"
 build = "build.rs"
+links = "blas"
 exclude = [
   "source/TESTING/*",
   "source/BLAS/TESTING/*",
