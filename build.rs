@@ -6,13 +6,8 @@ use std::fs::metadata;
 use std::path::PathBuf;
 use std::process::Command;
 
-macro_rules! feature(
-    ($name:expr) => (var(concat!("CARGO_FEATURE_", $name)).is_ok());
-);
-
-macro_rules! switch(
-    ($condition:expr) => (if $condition { "ON" } else { "OFF" });
-);
+macro_rules! feature(($name:expr) => (var(concat!("CARGO_FEATURE_", $name)).is_ok()));
+macro_rules! switch(($condition:expr) => (if $condition { "ON" } else { "OFF" }));
 
 fn main() {
     let kind = if feature!("STATIC") { "static" } else { "dylib" };
