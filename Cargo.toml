@@ -3,8 +3,8 @@ name = "netlib-src"
 version = "0.5.1"
 license = "Apache-2.0/MIT"
 authors = [
-  "Corey Richardson <corey@octayn.net>",
-  "Ivan Ukhov <ivan.ukhov@gmail.com>",
+    "Corey Richardson <corey@octayn.net>",
+    "Ivan Ukhov <ivan.ukhov@gmail.com>",
 ]
 description = "The package provides BLAS and LAPACK using the Netlib implementation."
 homepage = "https://github.com/cmr/netlib-src"
@@ -12,9 +12,9 @@ repository = "https://github.com/cmr/netlib-src"
 build = "build.rs"
 links = "blas"
 exclude = [
-  "source/TESTING/*",
-  "source/BLAS/TESTING/*",
-  "source/CBLAS/testing/*",
+    "source/TESTING/*",
+    "source/BLAS/TESTING/*",
+    "source/CBLAS/testing/*",
 ]
 
 [features]
