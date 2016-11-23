@@ -5,6 +5,7 @@ license = "Apache-2.0/MIT"
 authors = [
     "Corey Richardson <corey@octayn.net>",
     "Ivan Ukhov <ivan.ukhov@gmail.com>",
+    "Mason Smith <masonium@gmail.com>",
 ]
 description = "The package provides BLAS and LAPACK using the Netlib implementation."
 homepage = "https://github.com/cmr/netlib-src"
