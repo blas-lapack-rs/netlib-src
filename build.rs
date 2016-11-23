@@ -28,7 +28,7 @@ fn main() {
                             .define("BUILD_TESTING", "OFF")
                             .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
                             .define("CBLAS", switch!(cblas))
-                            .define("LAPACKE", switch!(lapacke))
+                            .define("LAPACKE_WITH_TMG", switch!(lapacke))
                             .define("CMAKE_INSTALL_LIBDIR", "lib")
                             .build();
 
@@ -43,5 +43,6 @@ fn main() {
     }
     if lapacke {
         println!("cargo:rustc-link-lib={}=lapacke", kind);
+        println!("cargo:rustc-link-lib={}=tmglib", kind);
     }
 }
