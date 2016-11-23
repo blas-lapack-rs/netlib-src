@@ -16,7 +16,8 @@ exclude = [
     "source/CBLAS/testing/*",
     "source/TESTING/*.in",
     "source/TESTING/EIG/*",
-    "source/TESTING/LIN/*",]
+    "source/TESTING/LIN/*",
+]
 
 [features]
 default = ["cblas", "lapacke"]
