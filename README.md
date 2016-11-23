@@ -8,6 +8,7 @@ The following Cargo features are supported:
 
 * `cblas` to build CBLAS (enabled by default),
 * `lapacke` to build LAPACKE (enabled by default),
+* `testing` to build TESTING/MATGEN routines (enabled by default),
 * `static` to link to Netlib statically, and
 * `system` to skip building the bundled Netlib.
 

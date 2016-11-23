@@ -12,17 +12,17 @@ repository = "https://github.com/cmr/netlib-src"
 build = "build.rs"
 links = "blas"
 exclude = [
-    "source/TESTING/*",
     "source/BLAS/TESTING/*",
     "source/CBLAS/testing/*",
 ]
 
 [features]
-default = ["cblas", "lapacke"]
+default = ["cblas", "lapacke", "testing"]
 
 cblas = []
 lapacke = []
 static = []
+testing = []
 system = []
 
 [build-dependencies]

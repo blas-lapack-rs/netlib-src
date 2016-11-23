@@ -13,6 +13,7 @@ fn main() {
     let kind = if feature!("STATIC") { "static" } else { "dylib" };
     let cblas = feature!("CBLAS");
     let lapacke = feature!("LAPACKE");
+    let testing = feature!("TESTING");
 
     if !feature!("SYSTEM") {
         let source = PathBuf::from("source");
@@ -25,7 +26,7 @@ fn main() {
         }
 
         let output = Config::new(&source)
-                            .define("BUILD_TESTING", "OFF")
+                            .define("BUILD_TESTING", switch!(testing))
                             .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
                             .define("CBLAS", switch!(cblas))
                             .define("LAPACKE", switch!(lapacke))
@@ -43,5 +44,8 @@ fn main() {
     }
     if lapacke {
         println!("cargo:rustc-link-lib={}=lapacke", kind);
+    }
+    if testing {
+        println!("cargo:rustc-link-lib={}=tmglib", kind);
     }
 }
