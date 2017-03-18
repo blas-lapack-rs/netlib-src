@@ -47,10 +47,7 @@ fn rename(directory: &Path, name: &str, suffix: &str) {
     for entry in fs::read_dir(directory).unwrap() {
         let path = entry.unwrap().path();
         let stem = path.file_stem().unwrap().to_str().unwrap();
-        if !stem.starts_with("lib") {
-            continue;
-        }
-        if &stem[3..] != name {
+        if !stem.starts_with("lib") || &stem[3..] != name {
             continue;
         }
         let mut new_path = path.clone();
