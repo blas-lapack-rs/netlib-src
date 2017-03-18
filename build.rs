@@ -31,9 +31,9 @@ fn main() {
         rename(&output, "lapack", suffix);
         println!("cargo:rustc-link-search={}", output.display());
     }
+    println!("cargo:rustc-link-lib=dylib=gfortran");
     println!("cargo:rustc-link-lib={}=blas{}", kind, suffix);
     println!("cargo:rustc-link-lib={}=lapack{}", kind, suffix);
-    println!("cargo:rustc-link-lib=dylib=gfortran");
     if cblas {
         println!("cargo:rustc-link-lib={}=cblas", kind);
     }
