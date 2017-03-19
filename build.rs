@@ -1,8 +1,8 @@
 extern crate cmake;
 
 use cmake::Config;
-use std::{env, fs, os};
-use std::path::{Path, PathBuf};
+use std::{env, fs};
+use std::path::Path;
 
 macro_rules! feature(($name:expr) => (env::var(concat!("CARGO_FEATURE_", $name)).is_ok()));
 macro_rules! switch(($condition:expr) => (if $condition { "ON" } else { "OFF" }));
@@ -14,12 +14,7 @@ fn main() {
     let lapacke = feature!("LAPACKE");
     if !feature!("SYSTEM") {
         suffix = "-netlib";
-        let source = PathBuf::from("source");
-        if !source.join("CBLAS").join("CMAKE").exists() {
-            os::unix::fs::symlink(source.join("CBLAS").join("cmake"),
-                                  source.join("CBLAS").join("CMAKE")).unwrap();
-        }
-        let output = Config::new(&source)
+        let output = Config::new("source")
                             .define("BUILD_TESTING", "OFF")
                             .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
                             .define("CBLAS", switch!(cblas))
