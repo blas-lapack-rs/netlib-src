@@ -10,6 +10,7 @@ authors = [
 description = "The package provides BLAS and LAPACK using the Netlib implementation."
 homepage = "https://github.com/cmr/netlib-src"
 repository = "https://github.com/cmr/netlib-src"
+readme = "README.md"
 categories = ["science"]
 keywords = ["linear-algebra"]
 build = "build.rs"
