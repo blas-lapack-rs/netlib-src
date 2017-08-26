@@ -9,18 +9,22 @@ macro_rules! switch(($condition:expr) => (if $condition { "ON" } else { "OFF" })
 
 fn main() {
     let mut suffix = "";
-    let kind = if feature!("STATIC") { "static" } else { "dylib" };
+    let kind = if feature!("STATIC") {
+        "static"
+    } else {
+        "dylib"
+    };
     let cblas = feature!("CBLAS");
     let lapacke = feature!("LAPACKE");
     if !feature!("SYSTEM") {
         suffix = "-netlib";
         let output = Config::new("source")
-                            .define("BUILD_TESTING", "OFF")
-                            .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
-                            .define("CBLAS", switch!(cblas))
-                            .define("LAPACKE_WITH_TMG", switch!(lapacke))
-                            .define("CMAKE_INSTALL_LIBDIR", "lib")
-                            .build();
+            .define("BUILD_TESTING", "OFF")
+            .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
+            .define("CBLAS", switch!(cblas))
+            .define("LAPACKE_WITH_TMG", switch!(lapacke))
+            .define("CMAKE_INSTALL_LIBDIR", "lib")
+            .build();
         let output = output.join("lib");
         rename(&output, "blas", suffix);
         rename(&output, "lapack", suffix);
