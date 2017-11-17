@@ -33,3 +33,6 @@ system = []
 
 [build-dependencies]
 cmake = "0.1"
+
+[dev-dependencies]
+libc = "0.2"
