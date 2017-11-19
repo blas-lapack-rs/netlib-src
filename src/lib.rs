@@ -6,8 +6,9 @@
 //!
 //! * `cblas` to build CBLAS (enabled by default),
 //! * `lapacke` to build LAPACKE (enabled by default),
-//! * `static` to link to Netlib statically, and
-//! * `system` to skip building the bundled Netlib.
+//! * `static` to link to Netlib statically,
+//! * `system` to skip building the bundled Netlib, and
+//! * `tmg` to build LAPACKE Test Matrix Generator (enabled by default).
 //!
 //! [blas]: https://en.wikipedia.org/wiki/BLAS
 //! [lapack]: https://en.wikipedia.org/wiki/LAPACK

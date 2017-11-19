@@ -16,13 +16,14 @@ fn main() {
     };
     let cblas = feature!("CBLAS");
     let lapacke = feature!("LAPACKE");
+    let tmg = feature!("TMG");
     if !feature!("SYSTEM") {
         suffix = "-netlib";
         let output = Config::new("source")
             .define("BUILD_TESTING", "OFF")
             .define("BUILD_SHARED_LIBS", switch!(kind == "dylib"))
             .define("CBLAS", switch!(cblas))
-            .define("LAPACKE_WITH_TMG", switch!(lapacke))
+            .define("LAPACKE_WITH_TMG", switch!(lapacke && tmg))
             .define("CMAKE_INSTALL_LIBDIR", "lib")
             .build();
         let output = output.join("lib");
@@ -38,7 +39,9 @@ fn main() {
     }
     if lapacke {
         println!("cargo:rustc-link-lib={}=lapacke", kind);
-        println!("cargo:rustc-link-lib={}=tmglib", kind);
+        if tmg {
+            println!("cargo:rustc-link-lib={}=tmglib", kind);
+        }
     }
 }
 

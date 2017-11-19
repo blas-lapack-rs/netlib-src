@@ -24,12 +24,13 @@ exclude = [
 ]
 
 [features]
-default = ["cblas", "lapacke"]
+default = ["cblas", "lapacke", "tmg"]
 
 cblas = []
 lapacke = []
 static = []
 system = []
+tmg = []
 
 [build-dependencies]
 cmake = "0.1"
