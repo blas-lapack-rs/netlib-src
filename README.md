@@ -10,7 +10,7 @@ The following Cargo features are supported:
 * `lapacke` to build LAPACKE (enabled by default),
 * `static` to link to Netlib statically,
 * `system` to skip building the bundled Netlib, and
-* `tmg` to build LAPACKE Test Matrix Generator (enabled by default).
+* `tmg` to build TMG (enabled by default).
 
 ## Contribution
 
