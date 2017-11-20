@@ -6,6 +6,7 @@ authors = [
     "Corey Richardson <corey@octayn.net>",
     "Ivan Ukhov <ivan.ukhov@gmail.com>",
     "Mason Smith <masonium@gmail.com>",
+    "Phil Ruffwind <rf@rufflewind.com>",
 ]
 description = "The package provides an implementation of BLAS and LAPACK via Netlib."
 homepage = "https://github.com/cmr/netlib-src"
