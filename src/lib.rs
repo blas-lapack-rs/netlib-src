@@ -1,4 +1,4 @@
-//! Implementation of [BLAS] and [LAPACK] via [Netlib].
+//! Source of [BLAS] and [LAPACK] via [Netlib].
 //!
 //! The usage of the package is explained [here][usage].
 //!

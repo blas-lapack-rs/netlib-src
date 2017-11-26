@@ -1,6 +1,6 @@
 [package]
 name = "netlib-src"
-version = "0.7.3"
+version = "0.7.4"
 license = "Apache-2.0/MIT"
 authors = [
     "Corey Richardson <corey@octayn.net>",
@@ -8,7 +8,7 @@ authors = [
     "Mason Smith <masonium@gmail.com>",
     "Phil Ruffwind <rf@rufflewind.com>",
 ]
-description = "The package provides an implementation of BLAS and LAPACK via Netlib."
+description = "The package provides a source of BLAS and LAPACK via Netlib."
 homepage = "https://github.com/cmr/netlib-src"
 repository = "https://github.com/cmr/netlib-src"
 readme = "README.md"

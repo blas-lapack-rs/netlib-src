@@ -1,6 +1,6 @@
 # netlib-src [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![Build][build-img]][build-url]
 
-The package provides an implementation of [BLAS] and [LAPACK] via [Netlib].
+The package provides a source of [BLAS] and [LAPACK] via [Netlib].
 
 The usage of the package is explained [here][usage].
 
