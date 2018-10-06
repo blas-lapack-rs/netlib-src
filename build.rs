@@ -1,8 +1,8 @@
 extern crate cmake;
 
 use cmake::Config;
-use std::{env, fs};
 use std::path::Path;
+use std::{env, fs};
 
 macro_rules! feature(($name:expr) => (env::var(concat!("CARGO_FEATURE_", $name)).is_ok()));
 macro_rules! switch(($condition:expr) => (if $condition { "ON" } else { "OFF" }));
