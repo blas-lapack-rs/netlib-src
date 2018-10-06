@@ -9,8 +9,8 @@ authors = [
     "Phil Ruffwind <rf@rufflewind.com>",
 ]
 description = "The package provides a source of BLAS and LAPACK via Netlib."
-homepage = "https://github.com/cmr/netlib-src"
-repository = "https://github.com/cmr/netlib-src"
+homepage = "https://github.com/blas-lapack-rs/netlib-src"
+repository = "https://github.com/blas-lapack-rs/netlib-src"
 readme = "README.md"
 categories = ["science"]
 keywords = ["linear-algebra"]

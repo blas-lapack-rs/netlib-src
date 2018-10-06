@@ -23,8 +23,8 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 [netlib]: http://www.netlib.org/
 [usage]: https://blas-lapack-rs.github.io/usage
 
-[build-img]: https://travis-ci.org/cmr/netlib-src.svg?branch=master
-[build-url]: https://travis-ci.org/cmr/netlib-src
+[build-img]: https://travis-ci.org/blas-lapack-rs/netlib-src.svg?branch=master
+[build-url]: https://travis-ci.org/blas-lapack-rs/netlib-src
 [documentation-img]: https://docs.rs/netlib-src/badge.svg
 [documentation-url]: https://docs.rs/netlib-src
 [package-img]: https://img.shields.io/crates/v/netlib-src.svg
