@@ -1,6 +1,6 @@
 [package]
 name = "netlib-src"
-version = "0.7.5"
+version = "0.8.0"
 license = "Apache-2.0/MIT"
 authors = [
     "Alexander Bulaev <alexbool@yandex-team.ru>",
