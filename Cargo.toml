@@ -3,6 +3,7 @@ name = "netlib-src"
 version = "0.7.5"
 license = "Apache-2.0/MIT"
 authors = [
+    "Alexander Bulaev <alexbool@yandex-team.ru>",
     "Corey Richardson <corey@octayn.net>",
     "Ivan Ukhov <ivan.ukhov@gmail.com>",
     "Mason Smith <masonium@gmail.com>",
