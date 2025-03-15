@@ -1,5 +1,3 @@
-extern crate cmake;
-
 use cmake::Config;
 use std::path::Path;
 use std::{env, fs};

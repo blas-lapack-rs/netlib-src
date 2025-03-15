@@ -1,4 +1,3 @@
-extern crate libc;
 extern crate netlib_src;
 
 use libc::c_float;

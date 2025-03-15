@@ -25,8 +25,8 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 [lapack]: https://en.wikipedia.org/wiki/LAPACK
 [netlib]: http://www.netlib.org/
 
-[build-img]: https://travis-ci.org/blas-lapack-rs/netlib-src.svg?branch=master
-[build-url]: https://travis-ci.org/blas-lapack-rs/netlib-src
+[build-img]: https://github.com/blas-lapack-rs/netlib-src/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/blas-lapack-rs/netlib-src/actions/workflows/build.yml
 [documentation-img]: https://docs.rs/netlib-src/badge.svg
 [documentation-url]: https://docs.rs/netlib-src
 [package-img]: https://img.shields.io/crates/v/netlib-src.svg
